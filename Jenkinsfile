@@ -33,14 +33,14 @@ pipeline {
 		}
 		stage('Build Docker Image') {
 			steps {
-				sh '/usr/local/bin/docker compose build'
+				sh '/usr/local/bin/docker compose build --no-cache'
 			}
 		}
 		
 		stage('Deploy application') {
 			steps {
 				sh '/usr/local/bin/docker compose down'
-				sh '/usr/local/bin/docker compose up -d'
+				sh '/usr/local/bin/docker compose up -d --force-recreate'
 			}
 		}
 	}
