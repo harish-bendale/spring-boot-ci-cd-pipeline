@@ -3,11 +3,13 @@ pipeline {
 	
 	stages {
 		stage('Check Tools') {
-			sh '''
-			whoami
-			docker --version
-			docker ps
-			'''
+			steps {
+				sh '''
+				whoami
+				docker --version
+				docker ps
+				'''
+			}
 		}
 		stage('Checkout') {
 			steps {
