@@ -31,8 +31,8 @@ pipeline {
 		
 		stage('Deploy application') {
 			steps {
-				sh 'docker compose down'
-				sh 'docker compose up'
+				sh '/usr/local/bin/docker compose down'
+				sh '/usr/local/bin/docker compose up'
 			}
 		}
 	}
