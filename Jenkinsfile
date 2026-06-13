@@ -16,13 +16,21 @@ pipeline {
 				git branch : 'main', url: 'https://github.com/harish-bendale/spring-boot-ci-cd-pipeline.git'
 			}
 		}
-		
+		stage('Verify commit') {
+			steps {
+				sh 'git log -1 --oneline'
+			}
+		}
 		stage('Build JAR') {
 			steps {
 				sh './mvnw clean package -DskipTests'
 			}
 		}
-		
+		stage('Verify JAR') {
+			steps {
+				sh 'ls -ltr target/'
+			}
+		}
 		stage('Build Docker Image') {
 			steps {
 				sh '/usr/local/bin/docker compose build'
