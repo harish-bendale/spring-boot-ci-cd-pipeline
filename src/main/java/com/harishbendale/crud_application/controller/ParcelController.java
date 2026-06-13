@@ -32,4 +32,9 @@ public class ParcelController {
 	public ResponseEntity<?> getParcel(@PathVariable UUID parcelId) {
 		return new ResponseEntity<>(service.getParcel(parcelId), HttpStatus.OK);
 	}
+	
+	@GetMapping("/test")
+	public ResponseEntity<?> testController() {
+		return new ResponseEntity<>("Hello world", HttpStatus.OK);
+	}
 }
