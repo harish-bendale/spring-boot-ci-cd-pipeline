@@ -35,6 +35,6 @@ public class ParcelController {
 	
 	@GetMapping("/test")
 	public ResponseEntity<?> testController() {
-		return new ResponseEntity<>("Hello world 4", HttpStatus.OK);
+		return new ResponseEntity<>("Hello world 5", HttpStatus.OK);
 	}
 }
