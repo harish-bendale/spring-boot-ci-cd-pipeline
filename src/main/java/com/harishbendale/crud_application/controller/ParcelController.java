@@ -25,7 +25,7 @@ public class ParcelController {
 	
 	@PostMapping("/book")
 	public ResponseEntity<ParcelBookResponseDTO> bookParcel(@RequestBody ParcelBookRequestDTO dto) {
-		return new ResponseEntity<>(service.bookParcel(dto), HttpStatus.CREATED);
+		return new ResponseEntity<>(service.bookParcel(dto), HttpStatus.OK);
 	}
 	
 	@GetMapping("/get/{parcelId}")
