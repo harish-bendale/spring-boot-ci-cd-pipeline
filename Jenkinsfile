@@ -2,6 +2,13 @@ pipeline {
 	agent any
 	
 	stages {
+		stage('Check Tools') {
+			sh '''
+			whoami
+			docker --version
+			docker ps
+			'''
+		}
 		stage('Checkout') {
 			steps {
 				git branch : 'main', url: 'https://github.com/harish-bendale/spring-boot-ci-cd-pipeline.git'
