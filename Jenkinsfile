@@ -6,8 +6,8 @@ pipeline {
 			steps {
 				sh '''
 				whoami
-				docker --version
-				docker ps
+				/usr/local/bin/docker --version
+				/usr/local/bin/docker ps
 				'''
 			}
 		}
