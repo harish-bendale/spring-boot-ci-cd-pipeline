@@ -32,7 +32,7 @@ pipeline {
 		stage('Deploy application') {
 			steps {
 				sh '/usr/local/bin/docker compose down'
-				sh '/usr/local/bin/docker compose up'
+				sh '/usr/local/bin/docker compose up -d'
 			}
 		}
 	}
